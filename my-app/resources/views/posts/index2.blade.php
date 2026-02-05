@@ -6,11 +6,12 @@
 <x-alert type="warning">
     これは警告メッセージです。
 </x-alert>
-<h1>index2のタイトルです</h1>
+<h1 class="text-center h-16">index2のタイトルです</h1>
 @foreach ($posts as $post)
-<div>
-    <h2>タイトル名：{{ $post->title }}</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <h2 class="text-center">タイトル名：{{ $post->title }}</h2>
     <p>本文：{{ $post->body }}</p>
+    <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded">投稿する</button>
 </div>
 @endforeach
 @endsection

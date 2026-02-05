@@ -8,4 +8,11 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        host: true,
+        hmr: {
+            host: 'localhost',
+        }
+    },
+    // postcss.config.jsで設定するので、ここは不要
 });
