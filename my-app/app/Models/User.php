@@ -57,7 +57,18 @@ class User extends Authenticatable
 
     public function createUser($data)
     {
-        $user = User::create($data);
+        $user = new User;
+        $user->name = $data->name;
+        $user->email = $data->email;
+        $user->password = $data->password;
+        $user->save(); //データベースに保存
+        return $user;
+    }
+
+    public function deleteUser($id)
+    {
+        $user = User::find($id);
+        $user->delete();
         return $user;
     }
 
