@@ -42,4 +42,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function getAllUsers()
+    {
+        $users = User::all();
+        return $users;
+    }
+
+    public function getUserById($id)
+    {
+        $user = User::find($id);
+        return $user;
+    }
+
+    public function createUser($data)
+    {
+        $user = User::create($data);
+        return $user;
+    }
+
 }
