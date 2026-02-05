@@ -28,8 +28,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'image' => 'required|image',
+            'caption' => 'nullable|string|max:255',
+        ]);
+        $path = $request->file('image')->store('images');
+
+        $post = new Post;
+        $post->image_path = $path;
+        $post->caption = $request->caption;
+        $post ->save()
+;    }
 
     /**
      * Display the specified resource.
