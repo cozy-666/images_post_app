@@ -12,7 +12,16 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts.comments.show');
+        $posts = [
+            (object)['title' => '最初の投稿です',
+            'body' => 'これは最初の投稿の本文です'],
+            (object)['title' => '二番目の投稿です',
+            'body' => 'これは二番目の投稿の本文です'],
+            (object)['title' => '三番目の投稿です',
+            'body' => 'これは三番目の投稿の本文です'],
+        ];
+        return view('posts.index', ['posts' => $posts]);
+        //'posts' はviewsの中のpostsに入る
     }
 
     /**
