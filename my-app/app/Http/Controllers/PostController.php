@@ -34,7 +34,10 @@ class PostController extends Controller
         ]);
         $path = $request->file('image')->store('images');
 
-        return Post::createPost($request->all());
+        Post::createPost($request->all());
+
+        return response()->json(['message'
+        => '画像が投稿されました']);
 ;    }
 
     /**
