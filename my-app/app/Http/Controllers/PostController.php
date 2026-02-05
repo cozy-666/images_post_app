@@ -34,10 +34,7 @@ class PostController extends Controller
         ]);
         $path = $request->file('image')->store('images');
 
-        $post = new Post;
-        $post->image_path = $path;
-        $post->caption = $request->caption;
-        $post ->save()
+        return Post::createPost($request->all());
 ;    }
 
     /**

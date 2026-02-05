@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    public function createPost($data)
+    {
+        $post = new Post;
+        $post->image_path = $path;
+        $post->caption = $request->caption;
+        $post ->save();
+        return $post;
+    }
 }
