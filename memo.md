@@ -10,3 +10,9 @@ app/Controllers
 docker exec -it myapp-php bash
 モデルとセットで作成できる
 php artisan make:controller PostController --model=Post
+
+# View
+ユーザーインターフェース
+ユーザーが見るところ
+blade テンプレートエンジン
+
