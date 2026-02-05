@@ -19,3 +19,6 @@ blade テンプレートエンジン
 #コンポーネント
 再利用可能な仕組み
 php artisan make:component Alert
+
+slot
+コンポーネント内で利用される内容

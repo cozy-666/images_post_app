@@ -8,12 +8,13 @@ use Illuminate\View\Component;
 
 class Alert extends Component
 {
+    public $type;
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($type='info')
     {
-        //
+        $this->type = $type;
     }
 
     /**
