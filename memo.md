@@ -16,3 +16,6 @@ php artisan make:controller PostController --model=Post
 ユーザーが見るところ
 blade テンプレートエンジン
 
+#コンポーネント
+再利用可能な仕組み
+php artisan make:component Alert
