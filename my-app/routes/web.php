@@ -22,3 +22,6 @@ Route::get('/posts',
 [PostController::class,'index']);
 Route::post('/posts',
 [PostController::class,'store']);
+
+Route::get('/posts2',
+[PostController::class,'index2']);

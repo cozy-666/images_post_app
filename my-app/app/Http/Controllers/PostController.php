@@ -23,6 +23,19 @@ class PostController extends Controller
         return view('posts.index', ['posts' => $posts]);
         //'posts' はviewsの中のpostsに入る
     }
+    public function index2()
+    {
+        $posts = [
+            (object)['title' => '最初の投稿です',
+            'body' => 'これは最初の投稿の本文です'],
+            (object)['title' => '二番目の投稿です',
+            'body' => 'これは二番目の投稿の本文です'],
+            (object)['title' => '三番目の投稿です',
+            'body' => 'これは三番目の投稿の本文です'],
+        ];
+        return view('posts.index2', ['posts' => $posts]);
+        //'posts' はviewsの中のpostsに入る
+    }
 
     /**
      * Show the form for creating a new resource.
