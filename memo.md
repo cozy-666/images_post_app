@@ -51,3 +51,5 @@ php artisan migrate
 
 # シーダー
 php artisan make:seeder PostsTableSeeder
+
+php artisan db:seed --class=UsersTableSeeder
