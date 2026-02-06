@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('post_images', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id')->autoIncrement();
             //postが消えたらこのテーブルも消す
             $table->foreignId('post_id')->constrained('posts')->onDelete('cascade');
             $table->string('url');
