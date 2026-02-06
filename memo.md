@@ -39,4 +39,10 @@ npx tailwindcss init -p
 
 # マイグレーション
 DBの構造を管理する機能
-php artisan migrate:status
+テーブル作成
+php artisan make:migration create_posts_table
+カラム追加
+php artisan make:migration add_posts_table
+カラム変更
+php artisan make:migration change_posts_table
+
