@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('post_images', function (Blueprint $table) {
             $table->id();
+            //postが消えたらこのテーブルも消す
+            $table->foreignId('post_id')->constrained('posts')->onDelete('cascade');
+            $table->string('url');
             $table->timestamps();
         });
     }
