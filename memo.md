@@ -48,3 +48,6 @@ php artisan make:migration change_posts_table
 
 # データベースの反映
 php artisan migrate
+
+# シーダー
+php artisan make:seeder PostsTableSeeder
