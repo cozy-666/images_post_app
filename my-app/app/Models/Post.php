@@ -12,8 +12,8 @@ class Post extends Model
     public function createPost($data)
     {
         $post = new Post;
-        $post->image_path = $path;
-        $post->caption = $request->caption;
+        $post->image_path = $data->title;
+        $post->content = $data->content;
         $post ->save();
         return $post;
     }
