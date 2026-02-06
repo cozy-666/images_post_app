@@ -46,3 +46,5 @@ php artisan make:migration add_posts_table
 カラム変更
 php artisan make:migration change_posts_table
 
+# データベースの反映
+php artisan migrate
