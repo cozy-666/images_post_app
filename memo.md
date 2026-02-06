@@ -36,3 +36,7 @@ npm list tailwindcss
 
 # 初期化
 npx tailwindcss init -p
+
+# マイグレーション
+DBの構造を管理する機能
+php artisan migrate:status
