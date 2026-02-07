@@ -109,4 +109,10 @@ class Post extends Model
         $posts = DB::table('posts')->paginate(5);
         return $posts;
     }
+
+     public function getCountPosts()
+     {
+        $count = DB::table('posts')->count();
+        return $count;
+     }
 }

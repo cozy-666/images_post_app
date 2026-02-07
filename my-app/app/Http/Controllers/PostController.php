@@ -134,6 +134,13 @@ class PostController extends Controller
         $posts = $post->getPostWithQueryBuilderByFilter();
         return $posts;
     }
+
+    public function getCountPost()
+    {
+        $post = new Post();
+        $count = $post->getCountPosts();
+        return $count;
+    }
     /**
      * Store a newly created resource in storage.
      */

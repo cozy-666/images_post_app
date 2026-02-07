@@ -57,3 +57,6 @@ Route::post('/posts/delete/qerybilder',
 
 Route::get('/posts/show/qerybuilder/filter',
 [PostController::class,'getPostWithQueryBuilderByFilter']);
+
+Route::get('/posts/show/qerybuilder/count',
+[PostController::class,'getCountPost']);
