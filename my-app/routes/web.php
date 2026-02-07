@@ -33,3 +33,9 @@ Route::post('/posts',
 
 Route::post('/posts/create/normal',
 [PostController::class,'createPostWithNormalSql']);
+
+Route::post('/posts/update/normal',
+[PostController::class,'updatePostWithNormalSql']);
+
+Route::post('/posts/delete/normal',
+[PostController::class,'deletePostWithNormalSql']);

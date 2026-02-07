@@ -28,12 +28,23 @@ class Post extends Model
 
     public function createPostWithNormalSql($data)
     {
-        //(?, ?)sqlインジェクション対策
-        //不正アクセス対策
         $post = DB::insert('INSERT INTO
         posts (user_id, title, body) VALUES
         (?, ?, ?)',
         [1,$data->title, $data->body]);
+        return $post;
+    }
+
+    public function updatePostWithNormalSql($data)
+    {
+        $post = DB::update('UPDATE posts SET title = ?, body = ?, update_at = ? WHERE id = ?',
+        [$data->title, $data->body, now(), $data->id]);
+        return $post;
+    }
+
+    public function deletePostWithNormalSql($data)
+    {
+        $post = DB::delete('DELETE FROM posts WHERE id = ?',[$data->id]);
         return $post;
     }
 }

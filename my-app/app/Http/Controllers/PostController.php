@@ -63,6 +63,25 @@ class PostController extends Controller
         $post->createPostWithNormalSql($dummyData);
     }
 
+    public function updatePostWithNormalSql()
+    {
+        $dummyData = (object)[
+            'id' => 12,
+            'title' => '更新された投稿',
+            'body' => '更新された投稿の内容です。'
+         ];
+         $post = new Post();
+         $post->updatePostWithNormalSql($dummyData);
+    }
+
+    public function deletePostWithNormalSql()
+    {
+        $dummyData = (object)[
+            'id' => 12,
+         ];
+         $post = new Post();
+         $post->deletePostWithNormalSql($dummyData);
+    }
     /**
      * Store a newly created resource in storage.
      */
