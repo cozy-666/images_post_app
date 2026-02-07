@@ -127,6 +127,13 @@ class PostController extends Controller
          $post = new Post();
          $post->deletePostWithQueryBuilder($dummyData);
     }
+
+    public function getPostWithQueryBuilderByFilter()
+    {
+        $post = new Post();
+        $posts = $post->getPostWithQueryBuilderByFilter();
+        return $posts;
+    }
     /**
      * Store a newly created resource in storage.
      */

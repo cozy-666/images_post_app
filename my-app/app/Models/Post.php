@@ -98,4 +98,12 @@ class Post extends Model
         $post = DB::table('posts')->where('id',$data->id)->delete();
         return $post;
     }
+
+    public function getPostWithQueryBuilderByFilter(){
+        $posts = DB::table('posts')
+        ->where('body', 'like', '%内容%')
+        ->whereIn('id', [1, 2, 3])
+        ->get();
+        return $posts;
+    }
 }

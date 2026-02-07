@@ -54,3 +54,6 @@ Route::post('/posts/update/qerybuilder',
 
 Route::post('/posts/delete/qerybilder',
 [PostController::class,'deletePostWithQueryBuilder']);
+
+Route::get('/posts/show/qerybuilder/filter',
+[PostController::class,'getPostWithQueryBuilderByFilter']);
