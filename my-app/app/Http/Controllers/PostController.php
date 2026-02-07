@@ -52,6 +52,17 @@ class PostController extends Controller
         //
     }
 
+    public function createPostWithNormalSql()
+    {
+        $dummyData = (object)[
+            'user_id' => 1,
+            'title' => '素のsqlで新しい投稿',
+            'body' => '素のsqlで新しい投稿の内容です。'
+        ];
+        $post = new Post();
+        $post->createPostWithNormalSql($dummyData);
+    }
+
     /**
      * Store a newly created resource in storage.
      */

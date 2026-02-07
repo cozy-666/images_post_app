@@ -30,7 +30,9 @@ class Post extends Model
     {
         //(?, ?)sqlインジェクション対策
         //不正アクセス対策
-        $post = DB::insert('INSERT INTO posts (user_id, title, body) VALUES (?, ?, ?)',
+        $post = DB::insert('INSERT INTO
+        posts (user_id, title, body) VALUES
+        (?, ?, ?)',
         [1,$data->title, $data->body]);
         return $post;
     }

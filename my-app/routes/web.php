@@ -30,3 +30,6 @@ Route::get('/posts3',
 
 Route::post('/posts',
 [PostController::class,'store']);
+
+Route::post('/posts/create/normal',
+[PostController::class,'createPostWithNormalSql']);
