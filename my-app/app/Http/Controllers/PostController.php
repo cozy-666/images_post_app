@@ -63,6 +63,13 @@ class PostController extends Controller
         $post->createPostWithNormalSql($dummyData);
     }
 
+    public function createBulkPostWithNormalSql()
+    {
+
+        $post = new Post();
+        $post->createBulkPostWithNormalSql();
+    }
+
     public function updatePostWithNormalSql()
     {
         $dummyData = (object)[

@@ -12,8 +12,9 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        'posts/create/normalsql',
-        'posts/update/normalsql',
-        'posts/delete/normalsql',
+        '/posts/create/normalsql',
+        '/posts/create/bulk',
+        '/posts/update/normalsql',
+        '/posts/delete/normalsql',
     ];
 }

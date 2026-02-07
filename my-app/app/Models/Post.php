@@ -47,4 +47,20 @@ class Post extends Model
         $post = DB::delete('DELETE FROM posts WHERE id = ?',[$data->id]);
         return $post;
     }
+
+    public function createBulkPostWithNormalSql(){
+        DB::transaction(function(){
+            $user_id = 1;
+            $title = "一番目のトランザクションテスト";
+            $body = "これは一番目のトランザクションのテストです";
+
+            DB::insert('INSERT INTO posts(user_id, title, body) VALUE (?, ?, ?)', [$user_id, $title,$body]);
+
+            //ユーザーIDを入れない
+            $title = "2番目のトランザクションテスト";
+            $body = "これは2番目のトランザクションのテストです";
+
+            DB::insert('INSERT INTO posts(title, body) VALUE (?, ?)', [$title,$body]);
+        });
+    }
 }
