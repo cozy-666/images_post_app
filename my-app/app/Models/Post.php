@@ -63,4 +63,39 @@ class Post extends Model
             DB::insert('INSERT INTO posts(title, body) VALUE (?, ?)', [$title,$body]);
         });
     }
+
+    public function GetPostWithQueryBuilder()
+    {
+        $posts = DB::table('posts')->get();
+        dd($posts);
+        return $posts;
+    }
+
+    public function createPostWithQueryBuilder($data)
+    {
+        $post = DB::table('posts')->insert([
+            'user_id' => $data->user_id,
+            'title' => $data->title,
+            'body' => $data->body,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        return $post;
+    }
+
+    public function updatePostWithQueryBuilder($data)
+    {
+        $post = DB::table('posts')->where('id',$data->id)->update([
+        'title' => $data->title,
+        'body' => $data->body,
+        'updated_at' => now()
+        ]);
+        return $post;
+    }
+
+    public function deletePostWithQueryBuilder($data)
+    {
+        $post = DB::table('posts')->where('id',$data->id)->delete();
+        return $post;
+    }
 }

@@ -42,3 +42,15 @@ Route::post('/posts/update/normal',
 
 Route::post('/posts/delete/normal',
 [PostController::class,'deletePostWithNormalSql']);
+
+Route::get('/posts/show/qerybuilder',
+[PostController::class,'getPostWithQueryBuilder']);
+
+Route::post('/posts/create/qerybuilder',
+[PostController::class,'createPostWithQueryBuilder']);
+
+Route::post('/posts/update/qerybuilder',
+[PostController::class,'updatePostWithQueryBuilder']);
+
+Route::post('/posts/delete/qerybilder',
+[PostController::class,'deletePostWithQueryBuilder']);

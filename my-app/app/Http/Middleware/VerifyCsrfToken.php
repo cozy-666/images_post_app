@@ -16,5 +16,9 @@ class VerifyCsrfToken extends Middleware
         '/posts/create/bulk',
         '/posts/update/normalsql',
         '/posts/delete/normalsql',
+
+        '/posts/create/querybuilder',
+        '/posts/update/querybuilder',
+        '/posts/delete/querybuilder',
     ];
 }

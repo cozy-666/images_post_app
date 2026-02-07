@@ -89,6 +89,44 @@ class PostController extends Controller
          $post = new Post();
          $post->deletePostWithNormalSql($dummyData);
     }
+
+    public function getPostWithQueryBuilder()
+    {
+        $post = new Post();
+        $posts=$post->getPostWithQueryBuilder();
+        return $posts;
+    }
+
+    public function createPostWithQueryBuilder()
+    {
+        $dummyData = (object)[
+            'user_id' => 1,
+            'title' => 'クエリービルダーで新しい投稿',
+            'body' => 'クエリービルダーで新しい投稿の内容です。'
+        ];
+        $post = new Post();
+        $post->createPostWithQueryBuilder($dummyData);
+    }
+
+    public function updatePostWithQueryBuilder()
+    {
+        $dummyData = (object)[
+            'id' => 12,
+            'title' => '更新された投稿',
+            'body' => '更新された投稿の内容です。'
+         ];
+         $post = new Post();
+         $post->updatePostWithQueryBuilder($dummyData);
+    }
+
+    public function deletePostWithQueryBuilder()
+    {
+        $dummyData = (object)[
+            'id' => 12,
+         ];
+         $post = new Post();
+         $post->deletePostWithQueryBuilder($dummyData);
+    }
     /**
      * Store a newly created resource in storage.
      */
