@@ -20,8 +20,13 @@ Route::get('/', function () {
 
 Route::get('/posts',
 [PostController::class,'index']);
-Route::post('/posts',
-[PostController::class,'store']);
+
 
 Route::get('/posts2',
 [PostController::class,'index2']);
+
+Route::get('/posts3',
+[PostController::class,'indexNormalSql']);
+
+Route::post('/posts',
+[PostController::class,'store']);

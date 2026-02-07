@@ -37,6 +37,13 @@ class PostController extends Controller
         //'posts' はviewsの中のpostsに入る
     }
 
+    public function indexNormalSql()
+    {
+        $post = new Post();
+        $posts = $post -> GetPostWithNormalSql();
+        return $posts;
+    }
+
     /**
      * Show the form for creating a new resource.
      */
