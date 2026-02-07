@@ -60,3 +60,6 @@ Route::get('/posts/show/qerybuilder/filter',
 
 Route::get('/posts/show/qerybuilder/count',
 [PostController::class,'getCountPost']);
+
+Route::get('/posts/show/qerybuilder/join',
+[PostController::class,'getPostWithQueryBuilderByFilter']);

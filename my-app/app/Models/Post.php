@@ -115,4 +115,13 @@ class Post extends Model
         $count = DB::table('posts')->count();
         return $count;
      }
+
+     public function getPostAndUserWithQueryBuilder()
+     {
+        $posts = DB::table('posts')
+            ->join('users', 'posts.user_id','=','users.id')
+            ->select('posts.*', 'users.name')
+            ->get();
+            return $posts;
+     }
 }

@@ -141,6 +141,13 @@ class PostController extends Controller
         $count = $post->getCountPosts();
         return $count;
     }
+
+    public function getPostAndUserWithQueryBuilder()
+    {
+        $post = new Post();
+        $posts = $post->getPostAndUserWithQueryBuilder();
+        return $posts;
+    }
     /**
      * Store a newly created resource in storage.
      */
