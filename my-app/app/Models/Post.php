@@ -100,10 +100,13 @@ class Post extends Model
     }
 
     public function getPostWithQueryBuilderByFilter(){
-        $posts = DB::table('posts')
-        ->where('body', 'like', '%内容%')
-        ->whereIn('id', [1, 2, 3])
-        ->get();
+        // $posts = DB::table('posts')
+        // ->where('body', 'like', '%内容%')
+        // ->whereIn('id', [1, 2, 3])
+        // ->get();
+
+        // ページネーション ?page=なんか
+        $posts = DB::table('posts')->paginate(5);
         return $posts;
     }
 }
