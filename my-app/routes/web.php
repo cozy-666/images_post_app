@@ -63,3 +63,6 @@ Route::get('/posts/show/qerybuilder/count',
 
 Route::get('/posts/show/qerybuilder/join',
 [PostController::class,'getPostWithQueryBuilderByFilter']);
+
+Route::get('/posts/show/qerybuilder/sbquery',
+[PostController::class,'getPostWithQueryBuilderBySubQuery']);

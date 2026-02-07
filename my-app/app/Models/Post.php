@@ -124,4 +124,16 @@ class Post extends Model
             ->get();
             return $posts;
      }
+
+     public function getPostWithQueryBuilderBySubQuery()
+     {
+        $posts = DB::table('posts')
+            ->whereIn('id', function ($query){
+                $query->select(DB::raw('MAX(id)'))
+                ->from('posts')
+                    ->groupBy('user_id');
+            })
+                ->get();
+            return $posts;
+     }
 }
