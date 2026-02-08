@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,9 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//コントローラー作成せずにルート設定
+Route::get('/user/{id}', User::class . '@getUserById');
 
 Route::get('/posts',
 [PostController::class,'index']);
