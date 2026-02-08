@@ -33,6 +33,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function posts()
+    {
+        return $this->hasmany(Post::class);
+    }
+
     /**
      * The attributes that should be cast.
      *
@@ -52,6 +57,7 @@ class User extends Authenticatable
     public function getUserById($id)
     {
         $user = User::find($id);
+        dd($user->posts);
         return $user;
     }
 
