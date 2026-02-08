@@ -151,7 +151,9 @@ class Post extends Model
 
      public function getPostWithEloquent()
      {
-        $posts = Post::with('tags')->get();
+        $posts = Post::with(['tags' => function($query){
+            $query->where('name', 'like', '%赤%');
+        }])->get();
         return $posts;
      }
 
