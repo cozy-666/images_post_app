@@ -155,6 +155,15 @@ class PostController extends Controller
         $posts = $post->getPostWithQueryBuilderBySubQuery();
         return $posts;
     }
+
+    public function getPostWithEloquent()
+    {
+        $post = new Post();
+        $posts = $post->getPostWithEloquent();
+        return $posts;
+    }
+
+
     /**
      * Store a newly created resource in storage.
      */

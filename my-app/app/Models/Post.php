@@ -136,4 +136,10 @@ class Post extends Model
                 ->get();
             return $posts;
      }
+
+     public function getPostWithEloquent()
+     {
+        $posts = Post::all();
+        return $posts;
+     }
 }

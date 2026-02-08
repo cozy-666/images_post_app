@@ -66,3 +66,6 @@ Route::get('/posts/show/qerybuilder/join',
 
 Route::get('/posts/show/qerybuilder/sbquery',
 [PostController::class,'getPostWithQueryBuilderBySubQuery']);
+
+Route::get('/posts/show/eloquent',
+[PostController::class,'getPostWithEloquent']);
