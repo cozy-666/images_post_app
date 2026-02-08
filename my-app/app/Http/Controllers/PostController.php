@@ -33,6 +33,17 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
+    public function show(Post $post)
+    {
+        return view('posts.show', ['post' => $post]);
+    }
+
+    public function edit(int $id)
+    {
+        $post = Post::findOrFail($id);
+        return view('posts.edit', ['post' => $post]);
+    }
+
 
     // public function indexRedirect()
     // {
