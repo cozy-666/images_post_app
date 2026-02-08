@@ -14,9 +14,13 @@ use App\Models\User;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//無名関数
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/hello', function () {
+    return "Hello, World!";
 });
 
 //コントローラー作成せずにルート設定
