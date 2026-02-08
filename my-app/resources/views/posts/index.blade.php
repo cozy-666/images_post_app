@@ -1,29 +1,40 @@
 @extends('layouts.app')
 
-@section('title','投稿一覧')
+@section('title', '投稿一覧')
 
 @section('content')
-@foreach ($posts as $post)
-<div class="grid grid-cols-1 gap-4 my-4">
+<div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
     <div>
-        <a href="/post/create" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full cursor-pointer">
-            新規投稿
-        </a>
+        <h1 class="text-2xl font-bold text-slate-800">投稿一覧</h1>
+        <p class="mt-1 text-slate-500 text-sm">みんなの投稿をチェックしよう</p>
     </div>
-    <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto shadow-md">
-        <a href="{{ route('post.show',['post'=>$post]) }}" class="w-full block h-full">
-            <img alt="blog photo" src="https://picsum.photos/200" class="max-h-40 w-full object-cover">
-            <div class="bg-white dark:bg-gray-800 w-full p-4">
-                <p class="text-gray-800 dark:text-white text-xl font-medium mb-2">
+    <a href="/post/create" class="btn-primary">
+        新規投稿
+    </a>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    @forelse ($posts as $post)
+    <a href="{{ route('post.show', ['post' => $post]) }}" class="group block">
+        <article class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-lg hover:border-blue-200 transition-all duration-200 h-full flex flex-col">
+            <img alt="{{ $post->title }}" src="https://picsum.photos/seed/{{ $post->id }}/600/300" class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="p-5 flex-1 flex flex-col">
+                <h2 class="text-lg font-semibold text-slate-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
                     {{ $post->title }}
-                </p>
-                <p class="text-gray-600 dark:text-gray-300 font-light text-md">
+                </h2>
+                <p class="text-slate-500 text-sm leading-relaxed line-clamp-3 flex-1">
                     {{ $post->body }}
                 </p>
             </div>
+        </article>
+    </a>
+    @empty
+    <div class="col-span-full bg-white rounded-xl border border-slate-100 p-16 text-center">
+        <p class="text-slate-500 mb-6">まだ投稿がありません</p>
+        <a href="/post/create" class="btn-primary">
+            最初の投稿を作成
         </a>
     </div>
+    @endforelse
 </div>
-@endforeach
 @endsection
-

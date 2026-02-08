@@ -1,22 +1,36 @@
 @extends('layouts.app')
 
-@section('title','新規投稿')
+@section('title', '新規投稿')
 
 @section('content')
-<div class="grid grid-cols-1 gap-4 my-4">
-    <h1 class="text-center font-bold">新規投稿</h1>
-    <form action="{{route('post.store')}}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        @csrf
-        <div class="md-4">
-        <label for="title" class="block text-gray-700 text-sm font-bold md-2">タイトル</label>
-        <input type="text" name="title" id="title">
-        </div>
-        <div class="md-6">
-        <label for="body" class="block text-gray-700 text-sm font-bold md-2">内容</label>
-        <textarea name="body" id="body"></textarea>
-        </div>
-        <button type="submit">投稿</button>
-    </form>
+<div class="max-w-2xl mx-auto">
+    <div class="mb-6">
+        <a href="{{ route('posts.index') }}" class="link-back">
+            ← 投稿一覧に戻る
+        </a>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 sm:p-8">
+        <h1 class="text-2xl font-bold text-slate-800 mb-6">新規投稿</h1>
+
+        <form action="{{ route('post.store') }}" method="POST">
+            @csrf
+            <div class="mb-5">
+                <label for="title" class="block text-slate-700 text-sm font-semibold mb-2">タイトル</label>
+                <input type="text" name="title" id="title" required
+                    class="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow"
+                    placeholder="投稿のタイトルを入力">
+            </div>
+            <div class="mb-6">
+                <label for="body" class="block text-slate-700 text-sm font-semibold mb-2">内容</label>
+                <textarea name="body" id="body" rows="6" required
+                    class="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow resize-y"
+                    placeholder="投稿の内容を入力"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+                投稿する
+            </button>
+        </form>
+    </div>
 </div>
 @endsection
-

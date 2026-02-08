@@ -1,38 +1,33 @@
 @extends('layouts.app')
 
-@section('title','投稿詳細')
+@section('title', '投稿詳細')
 
 @section('content')
-<div class="grid grid-cols-1 gap-4 my-4">
-    <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto shadow-md">
-        <img alt="blog photo" src="https://picsum.photos/200" class="max-h-40 w-full object-cover">
-        <div class="bg-white dark:bg-gray-800 w-full p-4">
-            <p class="text-gray-800 dark:text-white text-xl font-medium mb-2">
-                {{ $post->title }}
-            </p>
-            <p class="text-gray-600 dark:text-gray-300 font-light text-md">
-                {{ $post->body }}
-            </p>
-        </div>
+<div class="max-w-2xl mx-auto">
+    <div class="mb-6">
+        <a href="{{ route('posts.index') }}" class="link-back">
+            ← 投稿一覧に戻る
+        </a>
     </div>
-    <div class="grid grid-cols-2">
-        <div>
-        <a class="bg-blue-500 hover:bg-blue-700 text-white
-        font-bold py-2 px-4 rounded
-        focus:outline-none
-        focus:shadow-outline"
-        href="{{ route('post.edit',['post'=>$post]) }}">編集する</a>
+
+    <article class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden mb-6">
+        <img alt="{{ $post->title }}" src="https://picsum.photos/seed/{{ $post->id }}/800/400" class="w-full h-56 object-cover">
+        <div class="p-6 sm:p-8">
+            <h1 class="text-2xl font-bold text-slate-800 mb-4">{{ $post->title }}</h1>
+            <p class="text-slate-600 leading-relaxed whitespace-pre-wrap">{{ $post->body }}</p>
         </div>
-        <div>
-            <form action="{{ route('post.delete',['post'=>$post]) }}" method="post">
+    </article>
+
+    <div class="flex flex-wrap gap-3">
+        <a href="{{ route('post.edit', ['post' => $post]) }}" class="btn-primary">
+            編集する
+        </a>
+        <form action="{{ route('post.delete', ['post' => $post]) }}" method="post" class="inline">
             @csrf
-            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white
-            font-bold py-2 px-4 rounded
-            focus:outline-none
-            focus:shadow-outline">削除する</button>
-            </form>
-        </div>
+            <button type="submit" onclick="return confirm('この投稿を削除しますか？')" class="btn-danger">
+                削除する
+            </button>
+        </form>
     </div>
 </div>
 @endsection
-
