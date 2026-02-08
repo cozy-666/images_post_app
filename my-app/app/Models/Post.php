@@ -161,7 +161,7 @@ class Post extends Model
         return $post;
     }
 
-    public function getTrashPostWithEloquentById($id)
+    public function getTrashPostWithEloquent()
     {
         $posts = Post::onlyTrashed()->get();
         return $posts;

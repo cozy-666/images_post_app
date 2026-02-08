@@ -204,6 +204,12 @@ class PostController extends Controller
          $post->deletePostWithEloquent($dummyData);
     }
 
+    public function getPostWithEloquentTrashed()
+    {
+        $post = new Post();
+        $posts = $post->getTrashPostWithEloquent();
+        return $posts;
+    }
 
 
     /**

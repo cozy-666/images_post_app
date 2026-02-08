@@ -77,6 +77,9 @@ Route::get('/posts/show/eloquent',
 Route::get('/posts/show/eloquent/{id}',
 [PostController::class,'getPostWithEloquentById']);
 
+Route::get('/posts/show/eloquent/trashed',
+[PostController::class,'getPostWithEloquentTrashed']);
+
 Route::post('/posts/create/eloquent',
 [PostController::class,'createPostWithEloquent']);
 
