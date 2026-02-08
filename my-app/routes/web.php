@@ -83,5 +83,5 @@ Route::post('/posts/create/eloquent',
 Route::post('/posts/update/eloquent',
 [PostController::class,'updatePostWithEloquent']);
 
-Route::post('/posts/delete/eloquent',
+Route::post('/posts/delete/eloquent/{id}',
 [PostController::class,'deletePostWithEloquent']);
