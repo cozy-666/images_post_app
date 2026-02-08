@@ -11,9 +11,7 @@
     <header style="background-color: #1b72c9">
         <a href="{{ route('posts.index')}}">
                 <h1>イノセントSNSアプリ</h1>
-
         </a>
-
     </header>
     <div class='content'>
         @yield('content')

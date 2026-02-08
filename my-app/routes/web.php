@@ -33,6 +33,10 @@ Route::get('/posts',
 Route::get('/post/create',
 [PostController::class,'create']);
 
+Route::post('/post/create',
+[PostController::class,'store'])
+->name('post.store');
+
 // Route::get('/posts/redirect',
 // [PostController::class,'indexRedirect']);
 

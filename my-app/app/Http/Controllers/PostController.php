@@ -20,6 +20,19 @@ class PostController extends Controller
         return view('posts.create');
     }
 
+    public function store(Request $request)
+    {
+        //入力のバリデーション
+        $request->validate([
+            'title'=>'required|string|max:255',
+            'body'=>'required|string',
+        ]);
+
+        $post = new Post();
+        $result = $post->createPost($request->all());
+        return redirect()->route('posts.index');
+    }
+
 
     // public function indexRedirect()
     // {
