@@ -160,6 +160,10 @@ class PostController extends Controller
     {
         $post = new Post();
         $posts = $post->getPostWithEloquent();
+
+        foreach ($posts as $post) {
+            $post->tags;
+        }
         return $posts;
     }
 

@@ -151,7 +151,7 @@ class Post extends Model
 
      public function getPostWithEloquent()
      {
-        $posts = Post::all();
+        $posts = Post::with('tags')->get();
         return $posts;
      }
 

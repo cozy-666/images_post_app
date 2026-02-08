@@ -55,3 +55,6 @@ php artisan db:seed --class=UsersTableSeeder
 
 # ファクトリー
 php artisan make:factory PostFactory --model=Post
+
+# n+1問題
+予期しないデータの取得
