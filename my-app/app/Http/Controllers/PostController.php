@@ -163,6 +163,48 @@ class PostController extends Controller
         return $posts;
     }
 
+    public function getPostWithEloquentById()
+    {
+        $id = 1;
+        $post = new Post();
+        $posts = $post->getPostWithEloquentById($id);
+        return $post;
+    }
+
+    public function createPostWithEloquent()
+    {
+        $dummyData = (object)[
+            'user_id' => 1,
+            'title' => 'Eloquentで新しい投稿',
+            'body' => 'Eloquentで新しい投稿の内容です。'
+        ];
+        $post = new Post();
+        $post->createPostWithQueryBuilder($dummyData);
+        $posts = $post->showEloquent();
+        return $posts;
+    }
+
+    public function updatePostWithEloquent()
+    {
+        $dummyData = (object)[
+            'id' => 12,
+            'title' => 'Eloquentで更新された投稿',
+            'body' => 'Eloquentで更新された投稿の内容です。'
+         ];
+         $post = new Post();
+         $post->updatePostWithEloquent($dummyData);
+    }
+
+    public function deletePostWithEloquent()
+    {
+        $dummyData = (object)[
+            'id' => 12,
+         ];
+         $post = new Post();
+         $post->deletePostWithEloquent($dummyData);
+    }
+
+
 
     /**
      * Store a newly created resource in storage.

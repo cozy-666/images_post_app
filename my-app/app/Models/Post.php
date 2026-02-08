@@ -142,4 +142,37 @@ class Post extends Model
         $posts = Post::all();
         return $posts;
      }
+
+    public function getPostWithEloquentById($id)
+    {
+        $post = Post::find($id);
+        dd($post);
+        return $post;
+    }
+
+    public function createPostWithEloquent($data)
+    {
+        $post = new Post;
+        $post->user_id = $data->user_id;
+        $post->title = $data->title;
+        $post->body = $data->body;
+        $post->save();
+        return $post;
+    }
+
+    public function updatePostWithEloquent($data)
+    {
+        $post = Post::find($data->id);
+        $post->title = $data->title;
+        $post->body = $data->body;
+        $post->save();
+        return $post;
+    }
+
+    public function deletePostWithEloquent($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+        return $post;
+    }
 }

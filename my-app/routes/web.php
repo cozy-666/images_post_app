@@ -69,3 +69,15 @@ Route::get('/posts/show/qerybuilder/sbquery',
 
 Route::get('/posts/show/eloquent',
 [PostController::class,'getPostWithEloquent']);
+
+Route::get('/posts/show/eloquent/{id}',
+[PostController::class,'getPostWithEloquentById']);
+
+Route::post('/posts/create/eloquent',
+[PostController::class,'createPostWithEloquent']);
+
+Route::post('/posts/update/eloquent',
+[PostController::class,'updatePostWithEloquent']);
+
+Route::post('/posts/delete/eloquent',
+[PostController::class,'deletePostWithEloquent']);
