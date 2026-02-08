@@ -157,8 +157,14 @@ class Post extends Model
 
     public function getPostWithEloquentById($id)
     {
-        $post = Post::withTrashed()->find($id);
+        $post = Post::find($id);
         return $post;
+    }
+
+    public function getTrashPostWithEloquentById($id)
+    {
+        $posts = Post::onlyTrashed()->get();
+        return $posts;
     }
 
     public function createPostWithEloquent($data)
