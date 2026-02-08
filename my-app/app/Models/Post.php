@@ -15,6 +15,11 @@ class Post extends Model
         return $this->belongTo(User::class);
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
     public function createPost($data)
     {
         $post = new Post;
@@ -151,7 +156,7 @@ class Post extends Model
     public function getPostWithEloquentById($id)
     {
         $post = Post::find($id);
-        dd($post);
+        dd($post->tags);
         return $post;
     }
 
