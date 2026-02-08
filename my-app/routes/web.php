@@ -40,8 +40,15 @@ Route::middleware('auth')->group(function(){
     [PostController::class,'store']);
 });
 
+Route::prefix('posts')->group(function(){
+    Route::get('/create',[PostController::class, 'create']);
+    Route::get('/edit',[PostController::class, 'edit']);
+    Route::get('/show',[PostController::class, 'show']);
+    Route::get('/delete',[PostController::class, 'delete']);
+});
+
 Route::post('/posts/create/bulk',
-[PostController::class,'ccreateBulkPostWithNormalSql']);
+[PostController::class,'createBulkPostWithNormalSql']);
 
 Route::post('/posts/create/normal',
 [PostController::class,'createPostWithNormalSql']);
