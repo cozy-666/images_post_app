@@ -32,8 +32,10 @@ Route::get('/posts2',
 Route::get('/posts3',
 [PostController::class,'indexNormalSql']);
 
-Route::post('/posts',
-[PostController::class,'store']);
+Route::middleware('auth')->group(function(){
+    Route::post('/posts',
+    [PostController::class,'store']);
+});
 
 Route::post('/posts/create/bulk',
 [PostController::class,'ccreateBulkPostWithNormalSql']);
