@@ -9,7 +9,10 @@
 
 <body>
     <header style="background-color: #1b72c9">
-    <h1>イノセントSNSアプリ</h1>
+        <a href="{{ route('posts.index')}}">
+                <h1>イノセントSNSアプリ</h1>
+
+        </a>
 
     </header>
     <div class='content'>
@@ -17,7 +20,7 @@
     </div>
     <footer style="background-color: #1b72c9">
         <p>@ 2026 イノセントSNSアプリ</p>
-    </footer>  
+    </footer>
 </body>
 
 </html>

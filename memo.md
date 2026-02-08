@@ -58,3 +58,8 @@ php artisan make:factory PostFactory --model=Post
 
 # n+1問題
 予期しないデータの取得
+
+# 設定しているルーティング一覧リスト確認
+php artisan route:list
+createが入っているものだけ確認したいとき
+php artisan route:list　--path=create
