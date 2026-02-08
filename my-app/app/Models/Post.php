@@ -33,6 +33,15 @@ class Post extends Model
         return $post;
     }
 
+    public function updatePost($data, $id)
+    {
+        $post = Post::find($id);
+        $post->title = $data['title'];
+        $post->body = $data['body'];
+        $post->save();
+        return $post;
+    }
+
     // public function GetPostWithNormalSql()
     // {
     //     $posts = DB::select('SELECT * FROM posts');

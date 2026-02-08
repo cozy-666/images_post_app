@@ -44,6 +44,21 @@ class PostController extends Controller
         return view('posts.edit', ['post' => $post]);
     }
 
+    public function update(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|integer',
+            'title' => 'required|string|max:255',
+            'body' => 'required|string'
+        ]);
+        $postId = $request->input('id');
+
+        $post = new Post();
+        $result = $post->updatePost($request->all(), $postId);
+
+        return redirect()->route('posts.index');
+    }
+
 
     // public function indexRedirect()
     // {

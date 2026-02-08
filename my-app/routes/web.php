@@ -41,6 +41,14 @@ Route::get('/post/{post}',
 [PostController::class,'show'])
 ->name('post.show');
 
+Route::get('/post/edit/{post}',
+[PostController::class,'edit'])
+->name('post.edit');
+
+Route::post('/post/update',
+[PostController::class,'update'])
+->name('post.update');
+
 
 // Route::get('/posts/redirect',
 // [PostController::class,'indexRedirect']);

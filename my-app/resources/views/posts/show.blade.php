@@ -15,6 +15,7 @@
             </p>
         </div>
     </div>
+    <a href="{{ route('post.edit') }}">編集する</a>
 </div>
 @endsection
 
