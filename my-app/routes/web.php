@@ -23,8 +23,11 @@ Route::get('/', function () {
 Route::get('/user/{id}', User::class . '@getUserById');
 
 Route::get('/posts',
-[PostController::class,'index']);
+[PostController::class,'index'])
+->name('posts.index_route');
 
+Route::get('/posts/redirect',
+[PostController::class,'indexRedirect']);
 
 Route::get('/posts2',
 [PostController::class,'index2']);

@@ -21,8 +21,14 @@ class PostController extends Controller
             'body' => 'これは三番目の投稿の本文です'],
         ];
         return view('posts.index', ['posts' => $posts]);
-        //'posts' はviewsの中のpostsに入る
     }
+
+    public function indexRedirect()
+    {
+        return redirect()->route('posts.index_route');
+    }
+
+
     public function index2()
     {
         $posts = [
