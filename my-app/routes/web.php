@@ -86,7 +86,7 @@ Route::get('/posts/show/qerybuilder/sbquery',
 Route::get('/posts/show/eloquent',
 [PostController::class,'getPostWithEloquent']);
 
-Route::get('/posts/show/eloquent/{id}',
+Route::get('/posts/show/eloquent/{post}',
 [PostController::class,'getPostWithEloquentById']);
 
 Route::get('/posts/show/eloquent/trashed',

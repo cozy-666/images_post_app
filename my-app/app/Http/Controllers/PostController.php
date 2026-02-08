@@ -173,11 +173,10 @@ class PostController extends Controller
         return $posts;
     }
 
-    public function getPostWithEloquentById()
+    public function getPostWithEloquentById(Post $post)
     {
-        $id = 1;
         $post = new Post();
-        $posts = $post->getPostWithEloquentById($id);
+        $posts = $post->getPostWithEloquentById($post);
         return $post;
     }
 
