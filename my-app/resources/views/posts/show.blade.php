@@ -15,7 +15,13 @@
             </p>
         </div>
     </div>
-    <a href="{{ route('post.edit',['post'=>$post]) }}">編集する</a>
+    <div class="text-center">
+    <a class="bg-blue-500 hover:bg-blue-700 text-white
+    font-bold py-2 px-4 rounded
+    focus:outline-none
+    focus:shadow-outline"
+    href="{{ route('post.edit',['post'=>$post]) }}">編集する</a>
+    </div>
 </div>
 @endsection
 

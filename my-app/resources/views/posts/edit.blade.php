@@ -4,7 +4,15 @@
 
 @section('content')
 <div class="grid grid-cols-1 gap-4 my-2">
+    <div class="text-left">
+        <a href="{{ route('post.show',['post'=>$post]) }}"
+        class="bg-gray-500 hover:bg-gray-700 text-gray
+        font-bold py-2 px-4 rounded-full
+        cursor-pointer">
+        戻る</a>
+    </div>
     <h1 class="text-center font-bold">投稿編集</h1>
+    </div>
     <form action="{{ route('post.update') }}" method="POST" class="bg-white shadow-md rounded px-6
         pb-8 mb-4">
         @csrf
