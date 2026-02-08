@@ -157,8 +157,7 @@ class Post extends Model
 
     public function getPostWithEloquentById($id)
     {
-        $post = Post::find($id);
-        dd($post->tags);
+        $post = Post::withTrashed()->find($id);
         return $post;
     }
 
