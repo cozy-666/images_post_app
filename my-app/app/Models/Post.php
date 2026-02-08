@@ -42,6 +42,13 @@ class Post extends Model
         return $post;
     }
 
+    public function deletePost($id)
+    {
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return $post;
+    }
+
     // public function GetPostWithNormalSql()
     // {
     //     $posts = DB::select('SELECT * FROM posts');

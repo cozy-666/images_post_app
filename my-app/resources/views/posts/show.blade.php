@@ -15,12 +15,23 @@
             </p>
         </div>
     </div>
-    <div class="text-center">
-    <a class="bg-blue-500 hover:bg-blue-700 text-white
-    font-bold py-2 px-4 rounded
-    focus:outline-none
-    focus:shadow-outline"
-    href="{{ route('post.edit',['post'=>$post]) }}">編集する</a>
+    <div class="grid grid-cols-2">
+        <div>
+        <a class="bg-blue-500 hover:bg-blue-700 text-white
+        font-bold py-2 px-4 rounded
+        focus:outline-none
+        focus:shadow-outline"
+        href="{{ route('post.edit',['post'=>$post]) }}">編集する</a>
+        </div>
+        <div>
+            <form action="{{ route('post.delete',['post'=>$post]) }}" method="post">
+            @csrf
+            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white
+            font-bold py-2 px-4 rounded
+            focus:outline-none
+            focus:shadow-outline">削除する</button>
+            </form>
+        </div>
     </div>
 </div>
 @endsection

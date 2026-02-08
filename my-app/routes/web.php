@@ -49,6 +49,10 @@ Route::post('/post/update',
 [PostController::class,'update'])
 ->name('post.update');
 
+Route::post('/post/delete/{post}',
+[PostController::class,'destroy'])
+->name('post.delete');
+
 
 // Route::get('/posts/redirect',
 // [PostController::class,'indexRedirect']);
