@@ -63,3 +63,7 @@ php artisan make:factory PostFactory --model=Post
 php artisan route:list
 createが入っているものだけ確認したいとき
 php artisan route:list　--path=create
+
+# 画像アップロード処理
+シンボリックリンク必要
+php artisan storage:link
